@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E18D97963EE94570683C001 /* Pods_BreweriesList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542AE4FBF3CEF3C82451F804 /* Pods_BreweriesList.framework */; };
 		CE539AAD241AD72D0037616A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE539AAC241AD72D0037616A /* AppDelegate.swift */; };
 		CE539AAF241AD72D0037616A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE539AAE241AD72D0037616A /* SceneDelegate.swift */; };
 		CE539AB1241AD72D0037616A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE539AB0241AD72D0037616A /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C78C1795EA45A6F5BB659BF /* Pods-BreweriesList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreweriesList.release.xcconfig"; path = "Target Support Files/Pods-BreweriesList/Pods-BreweriesList.release.xcconfig"; sourceTree = "<group>"; };
+		542AE4FBF3CEF3C82451F804 /* Pods_BreweriesList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreweriesList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE539AA9241AD72D0037616A /* BreweriesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreweriesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE539AAC241AD72D0037616A /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		CE539AAE241AD72D0037616A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		CE539AB5241AD72E0037616A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE539AB8241AD72E0037616A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE539ABA241AD72E0037616A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABB70C01EF9487784ECF8A9 /* Pods-BreweriesList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreweriesList.debug.xcconfig"; path = "Target Support Files/Pods-BreweriesList/Pods-BreweriesList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E18D97963EE94570683C001 /* Pods_BreweriesList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		795D24E5534800DE36209A92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FABB70C01EF9487784ECF8A9 /* Pods-BreweriesList.debug.xcconfig */,
+				2C78C1795EA45A6F5BB659BF /* Pods-BreweriesList.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AEE0A0BC256DE1A80884D87F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				542AE4FBF3CEF3C82451F804 /* Pods_BreweriesList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE539AA0241AD72C0037616A = {
 			isa = PBXGroup;
 			children = (
 				CE539AAB241AD72D0037616A /* BreweriesList */,
 				CE539AAA241AD72D0037616A /* Products */,
+				795D24E5534800DE36209A92 /* Pods */,
+				AEE0A0BC256DE1A80884D87F /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -100,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE539ABD241AD72E0037616A /* Build configuration list for PBXNativeTarget "BreweriesList" */;
 			buildPhases = (
+				342D97401451206737966D4B /* [CP] Check Pods Manifest.lock */,
 				CE539AA5241AD72D0037616A /* Sources */,
 				CE539AA6241AD72D0037616A /* Frameworks */,
 				CE539AA7241AD72D0037616A /* Resources */,
+				CA2DAD8832B1BB88FE34B421 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +184,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		342D97401451206737966D4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BreweriesList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA2DAD8832B1BB88FE34B421 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreweriesList/Pods-BreweriesList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreweriesList/Pods-BreweriesList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreweriesList/Pods-BreweriesList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE539AA5241AD72D0037616A /* Sources */ = {
@@ -307,6 +376,7 @@
 		};
 		CE539ABE241AD72E0037616A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FABB70C01EF9487784ECF8A9 /* Pods-BreweriesList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +398,7 @@
 		};
 		CE539ABF241AD72E0037616A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C78C1795EA45A6F5BB659BF /* Pods-BreweriesList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
