@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,7 +48,6 @@
 				FABB70C01EF9487784ECF8A9 /* Pods-BreweriesList.debug.xcconfig */,
 				2C78C1795EA45A6F5BB659BF /* Pods-BreweriesList.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -58,6 +57,21 @@
 				542AE4FBF3CEF3C82451F804 /* Pods_BreweriesList.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE01B700241CE0C9005D5A4B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE539AB0241AD72D0037616A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE01B701241CE10C005D5A4B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		CE539AA0241AD72C0037616A = {
@@ -85,7 +99,8 @@
 			children = (
 				CE539AAC241AD72D0037616A /* AppDelegate.swift */,
 				CE539AAE241AD72D0037616A /* SceneDelegate.swift */,
-				CE539AB0241AD72D0037616A /* ViewController.swift */,
+				CE01B701241CE10C005D5A4B /* Api */,
+				CE01B700241CE0C9005D5A4B /* ViewControllers */,
 				CE539AC1241AD8070037616A /* Storyboards */,
 				CE539AC0241AD7D90037616A /* Resources */,
 				CE539AC2241AD82E0037616A /* Supporting files */,
