@@ -8,3 +8,4 @@
 import Foundation
 
 typealias BreweriesResultClosure = (Result<[BreweryModel]>) -> Void
+typealias EmptyClosure = () -> Void

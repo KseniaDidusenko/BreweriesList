@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class BreweriesViewController: UIViewController {
 
@@ -50,8 +51,6 @@ class BreweriesViewController: UIViewController {
   // MARK: - Private API
 
   private func prepareNavigationController() {
-    navigationItem.setRightBarButton(nil, animated: true)
-
     let titleLabel = UILabel()
     titleLabel.isUserInteractionEnabled.toggle()
     titleLabel.font = UIFont(name: "IowanOldStyleBT-Roman", size: 20)
@@ -114,6 +113,23 @@ extension BreweriesViewController: UITableViewDataSource {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
       as? BreweryCell else { return UITableViewCell() }
     cell.setupCell(searchResult[indexPath.row])
+    cell.webCompletion = {
+      let websiteUrl = URL(string: self.searchResult[indexPath.row].websiteUrl ?? "")
+      let safariViewController = SFSafariViewController(url: websiteUrl ?? URL(string: "https://google.com")!)
+      self.present(safariViewController, animated: true, completion: nil)
+    }
+    cell.mapCompletion = {
+      let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+      guard let mapController = storyBoard.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController else {
+              return
+      }
+      mapController.brewery = self.searchResult[indexPath.row]
+      let navController = UINavigationController(rootViewController: mapController)
+
+      self.navigationController?.present(navController, animated: true, completion: nil)
+//      self.navigationController?.pushViewController(mapController, animated: true)
+//      self.present(mapController, animated: true, completion: nil)
+    }
     return cell
   }
 

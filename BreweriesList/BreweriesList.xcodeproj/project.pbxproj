@@ -12,6 +12,7 @@
 		CE01B706241CF4E1005D5A4B /* BreweryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01B705241CF4E1005D5A4B /* BreweryModel.swift */; };
 		CE01B708241CF79D005D5A4B /* BreweryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01B707241CF79D005D5A4B /* BreweryService.swift */; };
 		CE01B70B241CFA11005D5A4B /* Typealias+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01B70A241CFA11005D5A4B /* Typealias+Extensions.swift */; };
+		CE07F49E241FFF2C00B5367D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07F49D241FFF2C00B5367D /* MapViewController.swift */; };
 		CE539AAD241AD72D0037616A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE539AAC241AD72D0037616A /* AppDelegate.swift */; };
 		CE539AAF241AD72D0037616A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE539AAE241AD72D0037616A /* SceneDelegate.swift */; };
 		CE539AB4241AD72D0037616A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE539AB2241AD72D0037616A /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		CE01B705241CF4E1005D5A4B /* BreweryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryModel.swift; sourceTree = "<group>"; };
 		CE01B707241CF79D005D5A4B /* BreweryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryService.swift; sourceTree = "<group>"; };
 		CE01B70A241CFA11005D5A4B /* Typealias+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typealias+Extensions.swift"; sourceTree = "<group>"; };
+		CE07F49D241FFF2C00B5367D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CE539AA9241AD72D0037616A /* BreweriesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreweriesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE539AAC241AD72D0037616A /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		CE539AAE241AD72D0037616A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				CEC28F10241EC92100A282A2 /* Cells */,
 				CEC28F0E241EC53C00A282A2 /* BreweriesViewController.swift */,
+				CE07F49D241FFF2C00B5367D /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				CE01B703241CE185005D5A4B /* NetworkService.swift in Sources */,
 				CE539AAD241AD72D0037616A /* AppDelegate.swift in Sources */,
 				CEC28F12241EC93900A282A2 /* BreweryCell.swift in Sources */,
+				CE07F49E241FFF2C00B5367D /* MapViewController.swift in Sources */,
 				CE01B70B241CFA11005D5A4B /* Typealias+Extensions.swift in Sources */,
 				CE539AAF241AD72D0037616A /* SceneDelegate.swift in Sources */,
 				CEC28F0F241EC53C00A282A2 /* BreweriesViewController.swift in Sources */,

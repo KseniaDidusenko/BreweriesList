@@ -66,12 +66,20 @@
                                                                     <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZy-xZ-atH">
-                                                                    <rect key="frame" x="0.0" y="23.5" width="63" height="12.5"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrZ-kX-Ruh">
+                                                                    <rect key="frame" x="0.0" y="23.5" width="69" height="12.5"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="12.5" id="m5T-Cs-jS6"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
-                                                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                    <state key="normal" title="Website button">
+                                                                        <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="websiteButtonTapped:" destination="wOs-iD-hBA" eventType="touchUpInside" id="SLW-St-44m"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzD-uG-DRt">
                                                                     <rect key="frame" x="0.0" y="47" width="64" height="12.5"/>
                                                                     <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
@@ -112,6 +120,9 @@
                                                                             <real key="value" value="5"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="showOnMapButtonTapped:" destination="wOs-iD-hBA" eventType="touchUpInside" id="etz-m8-0Dt"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -163,7 +174,7 @@
                                             <outlet property="showOnMapButton" destination="CRG-yS-4oA" id="tPp-Mw-arE"/>
                                             <outlet property="stateLabel" destination="kWe-Dk-kJP" id="hMu-o3-GaO"/>
                                             <outlet property="streetLabel" destination="gQ4-eu-bKK" id="d0Q-kd-aud"/>
-                                            <outlet property="websiteLabel" destination="RZy-xZ-atH" id="k5c-6H-uNZ"/>
+                                            <outlet property="websiteButton" destination="HrZ-kX-Ruh" id="KSg-ZB-XvY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -198,6 +209,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1040.8" y="110.19490254872565"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="I6H-gV-B6R">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="wu1-ay-fhB" customClass="MapViewController" customModule="BreweriesList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yeh-01-A5c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sVS-q3-m6v">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3mu-0y-tPg" firstAttribute="trailing" secondItem="sVS-q3-m6v" secondAttribute="trailing" id="GX4-W1-X2v"/>
+                            <constraint firstItem="sVS-q3-m6v" firstAttribute="top" secondItem="3mu-0y-tPg" secondAttribute="top" id="oqs-lQ-8J9"/>
+                            <constraint firstItem="3mu-0y-tPg" firstAttribute="bottom" secondItem="sVS-q3-m6v" secondAttribute="bottom" id="uJB-95-u0f"/>
+                            <constraint firstItem="sVS-q3-m6v" firstAttribute="leading" secondItem="3mu-0y-tPg" secondAttribute="leading" id="vol-AI-Gqb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3mu-0y-tPg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KTr-to-JiZ"/>
+                    <connections>
+                        <outlet property="mapView" destination="sVS-q3-m6v" id="oNt-zW-TIs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eec-oJ-Lfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6UP-n1-gUx">
