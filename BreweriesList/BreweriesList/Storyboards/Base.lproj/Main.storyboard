@@ -1,37 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGU-dz-GuT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="IowanOldStyle.TTF">
+            <string>IowanOldStyleBT-Roman</string>
+        </array>
+        <array key="IowanOldStyleBlack.TTF">
+            <string>IowanOldStyleBT-Black</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Breweries-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BreweriesList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BreweriesViewController" customModule="BreweriesList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgC-vx-GfC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.53333333329999999" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="lLr-BY-Qh7"/>
+                                </constraints>
+                                <color key="tintColor" red="0.1764705882" green="0.53333333329999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1764705882" green="0.53333333329999999" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="irishman" translatesAutoresizingMaskIntoConstraints="NO" id="PU1-Uq-igb">
+                                <rect key="frame" x="231" y="372" width="154" height="251"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gTL-1G-yte">
+                                <rect key="frame" x="0.0" y="43" width="375" height="580"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="wOs-iD-hBA" customClass="BreweryCell" customModule="BreweriesList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="223.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wOs-iD-hBA" id="Icu-wx-dBV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="223.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBF-Ct-pgi">
+                                                    <rect key="frame" x="12" y="6" width="351" height="211.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-4o-n6S">
+                                                            <rect key="frame" x="15" y="8" width="321" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="IowanOldStyleBT-Black" family="IowanOldSt Blk BT" pointSize="16"/>
+                                                            <color key="textColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ubd-kd-xXF">
+                                                            <rect key="frame" x="15" y="37.5" width="74" height="161"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pV4-W0-4vn">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="12.5"/>
+                                                                    <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
+                                                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZy-xZ-atH">
+                                                                    <rect key="frame" x="0.0" y="23.5" width="63" height="12.5"/>
+                                                                    <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
+                                                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzD-uG-DRt">
+                                                                    <rect key="frame" x="0.0" y="47" width="64" height="12.5"/>
+                                                                    <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
+                                                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWe-Dk-kJP">
+                                                                    <rect key="frame" x="0.0" y="70.5" width="49.5" height="12.5"/>
+                                                                    <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
+                                                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-a2-9c0">
+                                                                    <rect key="frame" x="0.0" y="94" width="45.5" height="12.5"/>
+                                                                    <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
+                                                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQ4-eu-bKK">
+                                                                    <rect key="frame" x="0.0" y="117.5" width="53.5" height="12.5"/>
+                                                                    <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
+                                                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRG-yS-4oA">
+                                                                    <rect key="frame" x="0.0" y="141" width="74" height="20"/>
+                                                                    <color key="backgroundColor" red="0.1764705882352941" green="0.53333333333333333" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="74" id="bH1-OP-EWH"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="wrl-4i-Efa"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="IowanOldStyleBT-Roman" family="IowanOldSt BT" pointSize="10"/>
+                                                                    <state key="normal" title="Show on map">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="ubd-kd-xXF" secondAttribute="bottom" constant="13" id="3Yd-bP-7lP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BY7-4o-n6S" secondAttribute="trailing" constant="15" id="3qu-2U-gVD"/>
+                                                        <constraint firstItem="BY7-4o-n6S" firstAttribute="leading" secondItem="YBF-Ct-pgi" secondAttribute="leading" constant="15" id="DRV-AY-cnK"/>
+                                                        <constraint firstItem="ubd-kd-xXF" firstAttribute="leading" secondItem="YBF-Ct-pgi" secondAttribute="leading" constant="15" id="ENr-Kc-wWx"/>
+                                                        <constraint firstItem="BY7-4o-n6S" firstAttribute="top" secondItem="YBF-Ct-pgi" secondAttribute="top" constant="8" id="Kc2-ny-jv7"/>
+                                                        <constraint firstItem="ubd-kd-xXF" firstAttribute="top" secondItem="BY7-4o-n6S" secondAttribute="bottom" constant="9" id="aGg-F5-b1W"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.1764705882352941" green="0.53333333333333333" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="YBF-Ct-pgi" firstAttribute="top" secondItem="Icu-wx-dBV" secondAttribute="top" constant="6" id="BNx-XO-b64"/>
+                                                <constraint firstItem="YBF-Ct-pgi" firstAttribute="leading" secondItem="Icu-wx-dBV" secondAttribute="leading" constant="12" id="FEC-8h-jkM"/>
+                                                <constraint firstAttribute="trailing" secondItem="YBF-Ct-pgi" secondAttribute="trailing" constant="12" id="hLV-iI-viq"/>
+                                                <constraint firstAttribute="bottom" secondItem="YBF-Ct-pgi" secondAttribute="bottom" constant="6" id="msz-mk-s81"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="breweryName" destination="BY7-4o-n6S" id="MQx-Qq-Lc3"/>
+                                            <outlet property="cityLabel" destination="Ukh-a2-9c0" id="Zh6-MV-zQ6"/>
+                                            <outlet property="countryNameLabel" destination="XzD-uG-DRt" id="V93-LS-RLL"/>
+                                            <outlet property="phoneNumberLabel" destination="pV4-W0-4vn" id="Npo-Tk-PgF"/>
+                                            <outlet property="showOnMapButton" destination="CRG-yS-4oA" id="tPp-Mw-arE"/>
+                                            <outlet property="stateLabel" destination="kWe-Dk-kJP" id="hMu-o3-GaO"/>
+                                            <outlet property="streetLabel" destination="gQ4-eu-bKK" id="d0Q-kd-aud"/>
+                                            <outlet property="websiteLabel" destination="RZy-xZ-atH" id="k5c-6H-uNZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0Jj-fE-nrd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="moQ-cW-aep"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTL-1G-yte" secondAttribute="trailing" id="8PY-sF-0DA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gTL-1G-yte" secondAttribute="bottom" id="FiR-z5-pId"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PU1-Uq-igb" secondAttribute="bottom" id="JTJ-IW-h4u"/>
+                            <constraint firstItem="dgC-vx-GfC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LZ2-Vg-C1v"/>
+                            <constraint firstItem="dgC-vx-GfC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="No5-a5-cuj"/>
+                            <constraint firstItem="gTL-1G-yte" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O73-hF-mLN"/>
+                            <constraint firstItem="gTL-1G-yte" firstAttribute="top" secondItem="dgC-vx-GfC" secondAttribute="bottom" id="XDx-fR-mIH"/>
+                            <constraint firstItem="dgC-vx-GfC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eJK-Q0-UIa"/>
+                            <constraint firstItem="PU1-Uq-igb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="10" id="eU5-dO-g0U"/>
+                            <constraint firstItem="PU1-Uq-igb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dgC-vx-GfC" secondAttribute="bottom" constant="325" id="lbY-Vg-O0A"/>
+                            <constraint firstItem="PU1-Uq-igb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="231" id="ujP-mG-BLf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HUF-oz-NLe"/>
+                    <navigationItem key="navigationItem" title="Breweries" id="HUF-oz-NLe"/>
+                    <connections>
+                        <outlet property="searchBar" destination="dgC-vx-GfC" id="wzr-GC-csc"/>
+                        <outlet property="tableView" destination="gTL-1G-yte" id="x98-jA-xE9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="110.49107142857143"/>
+            <point key="canvasLocation" x="1040.8" y="110.19490254872565"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6UP-n1-gUx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGU-dz-GuT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rDM-xc-u4q">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="rDM-xc-u4q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1764705882352941" green="0.53333333333333333" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -43,4 +222,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="110.49107142857143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="irishman" width="154.5" height="251"/>
+    </resources>
 </document>
