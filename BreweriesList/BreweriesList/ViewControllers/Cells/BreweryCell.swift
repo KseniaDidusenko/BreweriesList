@@ -81,7 +81,7 @@ class BreweryCell: UITableViewCell {
         attributes: [
           .foregroundColor: UIColor.textDarktGray,
           .underlineStyle: NSUnderlineStyle.single.rawValue
-      ])
+        ])
       baseTitle.append(linkTitle)
       button?.setAttributedTitle(baseTitle, for: .normal)
     } else {

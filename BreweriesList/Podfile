@@ -4,7 +4,6 @@ use_frameworks!
 
 target 'BreweriesList' do
   pod 'Alamofire', '5.0.2'
-  pod 'MBProgressHUD', '1.2.0'
   pod 'NotificationBannerSwift', '3.0.2'
   pod 'SwiftLint', '0.39.1'
 end

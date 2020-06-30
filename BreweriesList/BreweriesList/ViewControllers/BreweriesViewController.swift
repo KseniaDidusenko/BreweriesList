@@ -5,8 +5,8 @@
 //  Created by Ksenia on 3/15/20.
 //
 
-import UIKit
 import SafariServices
+import UIKit
 
 class BreweriesViewController: UIViewController {
 
@@ -24,6 +24,7 @@ class BreweriesViewController: UIViewController {
   private var cellSpacingHeight: CGFloat = 6
   private let searchController = UISearchController(searchResultsController: nil)
   private var searchActive: Bool = false
+  private let databaseStore = DatabaseStore()
 
   // MARK: - View controller view's lifecycle
 
@@ -40,7 +41,7 @@ class BreweriesViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    getBreweriesList()
+    showData()
   }
   // MARK: - Navigation
 
@@ -69,12 +70,19 @@ class BreweriesViewController: UIViewController {
     searchBar.tintColor = .lightGray
   }
 
+  private func showData() {
+    breweriesList = databaseStore.readValues(breweriesList: breweriesList)
+    tableView.reloadData()
+    getBreweriesList()
+  }
+
   private func getBreweriesList() {
     BreweryService().receiveBreweries { result in
       switch result {
       case .success(let breweries):
         print(breweries)
         self.breweriesList = breweries
+        self.breweriesList.forEach { self.databaseStore.create(brewery: $0) }
         self.searchResult = self.breweriesList
         self.tableView.reloadData()
       case .failure(let error):
@@ -127,8 +135,6 @@ extension BreweriesViewController: UITableViewDataSource {
       let navController = UINavigationController(rootViewController: mapController)
 
       self.navigationController?.present(navController, animated: true, completion: nil)
-//      self.navigationController?.pushViewController(mapController, animated: true)
-//      self.present(mapController, animated: true, completion: nil)
     }
     return cell
   }
